@@ -21,6 +21,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Download bootstrap zips
+        run: ./gradlew downloadBootstraps
       - name: Build arm64 release APK
         run: ./gradlew app:assembleRelease
       - name: Sign APK
